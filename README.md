@@ -1,4 +1,4 @@
-Applience-Data-Analysis-and-Modification-Toolkit
+Applience Data Analysis and Modification Toolkit
 =====================
 
 Usage
