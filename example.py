@@ -18,7 +18,7 @@ def main():
             appliance.from_REDD(appliances_config[app]["path"])
     
         print(appliance.settings)
-        appliance.import_settings(appliances_config[0])
+        appliance.import_settings(appliances_config[app])
         print(appliance.settings)
         appliance.fill_missing()
         appliance.resample()
