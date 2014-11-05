@@ -1,0 +1,10 @@
+{
+"Appliances":[
+  {
+    "dataset":"REDD",
+    "path":"path/to/channel.dat",
+    "sampling_rate":"1H",
+    "median_n":150
+  }
+]
+}
