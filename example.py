@@ -25,8 +25,8 @@ def main():
         appliance.med()
         appliance.plot()
         appliance.get_appliance_state()
-        print(appliance.states)
-        
+        appliance.get_appliance_state_by_edge_detection()
+
     appliances.append(appliance)
 
     matplotlib.pyplot.show()
