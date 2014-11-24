@@ -191,18 +191,23 @@ class ApplianceDataset(object):
             elif a[c] != 0:
                 r_f_states = a[c]
 
-
-        r_f_max = max(all_r_f_states.values())
-        to_return = list()
+        #when there're no states
+        if all_r_f_states == {}:
+            ApplianceDataset.print_time("Getting states by edge detection", start_time)
+            return []
+        else:
+            r_f_max = max(all_r_f_states.values())
+            to_return = list()
         
-        r_f_factor = self.settings['edge_detection_power_factor']
+            r_f_factor = self.settings['edge_detection_power_factor']
 
-        for v in all_r_f_states:
-            if all_r_f_states[v] / r_f_max > r_f_factor:
-                to_return.append(v)
+            for v in all_r_f_states:
+                if all_r_f_states[v] / r_f_max > r_f_factor:
+                    to_return.append(v)
 
-        ApplianceDataset.print_time("Getting states by edge detection", start_time)
-        return to_return 
+            ApplianceDataset.print_time("Getting states by edge detection", start_time)
+            return to_return 
+
 
     
     def resample(self, sampling_rule = None, sampling_how = None):
@@ -240,11 +245,8 @@ class ApplianceDataset(object):
             #stop point
             e = (min(i+r+1, len(self.values[0])))
             
-            #creation of a temporary pandas dataframe for representing the current data
-            tmp_frame = ((self.values[0][s:e]).to_frame())
-            
-            #the median of the temporary frame
-            median = tmp_frame.median()
+            #calc of med
+            median = sorted(self.values[0][s:e])[r]
             
             vals.append(median)
         
