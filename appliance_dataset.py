@@ -25,7 +25,7 @@ class ApplianceDataset(object):
             'histogram_extra':5,
             'edge_detection_threshold':50,
             'edge_detection_power_factor':0.3,
-            'occ_low_threshold':10',
+            'occ_low_threshold':10,
 
         }
     
