@@ -25,7 +25,9 @@ def main():
         appliance.med()
         appliance.plot()
         appliance.get_appliance_state()
-        appliance.get_appliance_state_by_edge_detection()
+        states = appliance.get_appliance_state_by_edge_detection()
+        print(appliance.get_states_per_day(states))
+
 
     appliances.append(appliance)
 
