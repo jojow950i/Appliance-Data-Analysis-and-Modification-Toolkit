@@ -25,6 +25,8 @@ class ApplianceDataset(object):
             'histogram_extra':5,
             'edge_detection_threshold':50,
             'edge_detection_power_factor':0.3,
+            'occ_low_threshold':10',
+
         }
     
     def print_time(description, start_time):
@@ -252,6 +254,65 @@ class ApplianceDataset(object):
         
         #creates DataFrame using the medians of the preivous frames
         self.values = pandas.DataFrame(vals, index=[self.values.index])
+
+    def get_count_per_day(self, states):
+        return self.__get_occurance_per_day(states, to_ret = "count")
+
+    def get_states_per_day(self, states):
+        return self.__get_occurance_per_day(states, to_ret = "states")
+
+    def __get_occurance_per_day(self, states, to_ret):
+        def get_closest_state(state):
+            tmp = list()
+            for s in states:
+                tmp.append((abs(s-state), s)) 
+            return min(tmp)[1]
+
+        last_val = self.values[0][0]
+        prev_date = self.values.index[0]
+        prev_state = get_closest_state(last_val)
+        
+        #find states
+        states_per_day = list()
+        total_states_per_day = dict()
+        count_per_day = 0
+        total_counts = dict()
+        for i in range(len(self.values[0])):
+            c_date = self.values.index[i]
+
+            #another day
+            if prev_date.day != c_date.day:
+                if states_per_day == []:
+                    count_per_day+=1
+                    states_per_day.append(get_closest_state(prev_state))
+                
+                total_counts.update({c_date:count_per_day})
+                total_states_per_day.update({c_date:states_per_day})
+
+                states_per_day = list()
+                count_per_day = 0
+
+            #detect states
+            c_state = get_closest_state(self.values[0][i])
+            if prev_state != c_state:
+
+                if states_per_day == []:
+                    states_per_day.append(get_closest_state(prev_state))
+
+                if prev_state < self.settings['occ_low_threshold']:
+                    count_per_day+=1
+                    
+                states_per_day.append(get_closest_state(c_state)) 
+
+                prev_state = c_state
+                
+            last_val = c_state
+            prev_date = c_date
+
+        if to_ret == "count":
+            return total_counts
+        elif to_ret == "states":
+            return total_states_per_day
 
     
     def import_settings(self, settings):
