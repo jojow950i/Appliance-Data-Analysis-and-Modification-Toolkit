@@ -7,7 +7,7 @@ Also the states of the appliance can be calculated using numpy and pandas.
 
 ##Abilities
 
-"Applience-Data-Analysis-and-Modification-Toolkit" has several useful qualities such as
+"Appliance-Data-Analysis-and-Modification-Toolkit" has several useful qualities such as
 
 - Basic Data Analysis functions powered by Pandas
 
