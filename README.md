@@ -1,4 +1,4 @@
-#Applience Data Analysis and Modification Toolkit
+#Appliance Data Analysis and Modification Toolkit
 
 ##Usage
 
