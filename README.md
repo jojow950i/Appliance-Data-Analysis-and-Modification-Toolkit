@@ -19,4 +19,4 @@ Also the states of the appliance can be calculated using numpy and pandas.
 
 ##Configuration
 
-Settings are passed into the ´ApplianceDataset´ using the ´import_settings()´ function which takes a dictionary as an argument. The valid options can be found at the beginning of the ´ApplianceDataset´ class. 
+Settings are passed into the `ApplianceDataset` using the `import_settings()` function which takes a dictionary as an argument. The valid options can be found at the beginning of the `ApplianceDataset` class. 
