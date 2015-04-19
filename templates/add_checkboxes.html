@@ -1,0 +1,23 @@
+<script>
+    checkbox{{ message["dataset"]}} = document.getElementById("checkbox{{ message["dataset"]}}");
+    checkName = "checkbox{{ message["dataset"]}}"
+    checked_datasets["{{ message["dataset"]}}"] = false;
+    checkbox{{ message["dataset"]}}.onchange = function(){
+
+        console.log("changed"+checkName)
+
+
+        tmp_state = checkbox{{ message["dataset"]}}.checked;
+
+        checked_datasets["{{ message["dataset"]}}"] = tmp_state;
+        console.log("checkbox_name: "+checkName+"; "+checked_datasets[checkName]);
+        userList.clear();
+        getEntries();
+        //windowresize();
+        //alert("checked"+checked_datasets["checkbox{{ message["dataset"]}}"]);
+    }
+
+</script>
+
+<input type="checkbox" id="checkbox{{ message["dataset"]}}">{{ message["dataset"]}}</input></br>
+

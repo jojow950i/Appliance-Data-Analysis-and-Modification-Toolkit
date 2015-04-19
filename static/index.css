@@ -1,0 +1,258 @@
+html {
+   margin: 0px;
+   height: 100%;
+   width: 100%;
+}
+
+body {
+   margin: 0px;
+   min-height: 100%;
+   width: 100%;
+}
+
+.header {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+
+}
+
+.header h1 {
+    padding: 0;
+    margin: 0;
+}
+
+.DataSetChooser {
+    background-color: #eaeaea;
+    text-align: left;
+    width: 150px;
+    margin-inside: 0;
+    margin: 0;
+    padding: 10px;
+}
+
+.selectable {
+    font-size: 10px;
+    background-color: green;
+}
+
+#rdoAdd {
+    background-color: green;
+}
+
+.ApplianceChooser {
+    border-style: none;
+    border-color: red;
+    background-color: white;
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    overflow:hidden;
+}
+
+.Setup{
+    background-color: #eaeaea;
+    width: 400px;
+    position: absolute;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.list {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0px;
+}
+
+.list > li {
+    display: block;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: inset 0 1px 0 #eee;
+}
+
+.avatar {
+    max-width: 150px;
+}
+
+img {
+    max-width: 100%;
+}
+
+h3 {
+    font-size: 16px;
+    margin: 0 0 0.3rem;
+    font-weight: normal;
+    font-weight: bold;
+}
+
+p {
+    margin: 0;
+}
+
+input {
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    padding: 7px 14px;
+    margin-bottom: 10px
+}
+
+input:focus {
+    outline: none;
+    border-color: #aaa;
+}
+
+.sort {
+    padding: 8px 30px;
+    border-radius: 6px;
+    border: none;
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    background-color: #525252;
+    height: 30px;
+    width: 150px;
+}
+
+.sort:hover {
+    text-decoration: none;
+    background-color: #000000;
+    cursor: pointer;
+}
+
+.sort:focus {
+    outline: none;
+}
+
+.sort:after {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    content: "";
+    position: relative;
+    top: -10px;
+    right: -5px;
+}
+
+.sort.asc:after {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
+    content: "";
+    position: relative;
+    top: 13px;
+    right: -5px;
+}
+
+.sort.desc:after {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #fff;
+    content: "";
+    position: relative;
+    top: -10px;
+    right: -5px;
+}
+
+.selectableLabel.ui-button.ui-state-active {
+    background: black;
+    color: #ffffff;
+}
+
+.ButtonAdd {
+    background-color: #009400;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.ButtonAdd:hover {
+    background-color: green;
+    cursor: pointer;
+}
+
+.ButtonRemove {
+    background-color: red;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.ButtonRemove:hover {
+    background-color: #c70000;
+    cursor: pointer;
+}
+
+.chooseEntry {
+
+}
+
+.scrollableEntry {
+    overflow: auto;
+    height: 90%;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.name_chosen {
+    margin-bottom: 0;
+}
+
+.finishButton{
+    color: #ffffff;
+    background-color: #787878;
+}
+
+.finishButton:hover{
+    background-color: #000000;
+    cursor: pointer;
+}
+
+.finishButton:disabled{
+    background-color: #cacaca;
+    color: #888888;
+    cursor: default;
+}
+
+.ButtonEdit{
+
+    border: none;
+    color: #525252;
+    text-align: center;
+    margin-bottom: 0;
+
+}
+
+.ButtonEdit:hover {
+    color: #000000;
+    background-color: #ccc;
+
+}
+
+.menuDropdown{
+    top: 0;
+    visibility: hidden;
+    background-color: #ccc;
+    /*border-style: solid;*/
+    position: absolute;
+    right: 20px;
+    border-radius: 10px;
+    box-shadow: -10px 10px 20px #888888;
+    z-index: 1;
+}
+
+.ButtonEdit:hover > .menuDropdown{
+    visibility: visible;
+}

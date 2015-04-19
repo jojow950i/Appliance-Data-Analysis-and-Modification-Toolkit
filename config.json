@@ -2,9 +2,9 @@
 "Appliances":[
   {
     "dataset":"REDD",
-    "path":"path/to/channel.dat",
-    "sampling_rate":"1H",
-    "median_n":150
+    "path":"/Users/johannesholzl/Documents/work_uni/low_freq/house_1/channel_4.dat",
+    "sampling_rule":"1S",
+    "median_n":21
   }
 ]
 }

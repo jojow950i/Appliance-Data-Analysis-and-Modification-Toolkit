@@ -1,0 +1,70 @@
+
+<script>
+
+    $(function () {
+
+        var id = "{{ message["from"]}}";
+        var button_name = "button{{ message["from"]}}";
+        var small_id = "rdoSmall{{ message["from"]}}";
+        var medium_id = "rdoMedium{{ message["from"]}}";
+        var large_id = "rdoLarge{{ message["from"]}}";
+
+        var app_name = "{{ message["name"]}}";
+
+        var small = "{{ message["small"]}}";
+        var medium = "{{ message["medium"]}}";
+        var large = "{{ message["large"]}}";
+
+        /*
+        all = "<div id=\"" + id + "\">" +
+            "<input class=\"selectable\" type=\"radio\" id=\""+small_id +"\" name=\""+button_name+"\"  onclick=\"\"/>"+
+            "<label style=\"font-size:12px;\" class=\"selectableLabel\" for=\""+small_id+"\">Small</label>"+
+
+            "<input class=\"selectable\" type=\"radio\" id=\""+medium_id +"\" name=\""+button_name+"\"  onclick=\"\"/>"+
+            "<label style=\"font-size:12px;\" class=\"selectableLabel\" for=\""+medium_id+"\">Medium</label>"+
+
+            "<input class=\"selectable\" type=\"radio\" id=\""+large_id +"\" name=\""+button_name+"\"  onclick=\"\"/>"+
+            "<label style=\"font-size:12px;\" class=\"selectableLabel\" for=\""+large_id+"\">Large</label>"+
+
+            "</div>";
+        */
+
+        var all = "<div  id=\"" + id + "\">";
+
+
+        var items = ["Small", "Medium", "Large"];
+        var itemVals = {"Small":small, "Medium":medium, "Large":large};
+        items.forEach(function (entry) {
+            amount = itemVals[entry]
+            var t_id = "rdo"+ entry + ""+ id;
+            all += "<input class=\"selectable\""
+
+            if(amount==0){
+                all+=" disabled=\"true\" "
+            }
+            all+="type=\"radio\" id=\"" + t_id + "\" name=\"" + button_name + "\"  onclick=\"\"/>" +
+            "<label style=\"font-size:10px\" class=\"selectableLabel\" for=\"" + t_id + "\">" + entry +" ("+amount+")</label>"
+
+
+        });
+
+        console.log(itemVals);
+
+        all += '</div>'
+
+        buttonAdd = "<input type=\"button\" style=\"float:right\" class=\"ButtonAdd\" value=\"Add\" onclick= \" addChosen('" + +(id) + "','" + (button_name) + "','" + app_name + "','" + small + "','" + medium + "','" + large + "')\" />";
+
+
+        userList.add({
+            name: app_name,
+            switchableButtons: all,
+            modifyButton: buttonAdd
+                     });
+
+        $("#"+id).buttonset();
+
+        });
+
+
+
+</script>
