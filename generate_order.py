@@ -205,8 +205,8 @@ class GenerateOrder:
 
     def add_noise(self):
         for val in self.aggregated:
-            self.aggregated[val] += (random.random() * self.noise * 2) - self.noise
-            self.aggregated[val] = max(self.aggregated[val], 0)
+            self.aggregated[val][1] += (random.random() * self.noise * 2) - self.noise
+            self.aggregated[val][1] = max(self.aggregated[val][1], 0)
  
     def write_csv(self):
         self.c_buffer.output_status("Generating csv file</br>")
