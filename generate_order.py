@@ -207,7 +207,7 @@ class GenerateOrder:
         for val in self.aggregated:
             self.aggregated[val] += (random.random() * self.noise * 2) - self.noise
             self.aggregated[val] = max(self.aggregated[val], 0)
-
+ 
     def write_csv(self):
         self.c_buffer.output_status("Generating csv file</br>")
         with open('download/' + self.gotten_id + '.csv', 'w') as f:
